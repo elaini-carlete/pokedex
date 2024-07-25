@@ -1,7 +1,7 @@
-import Pokemon from './components/Pokemon/pokemon'
+import { AppRoutes } from './routes/routes'
 
 export default function App() {
   return (
-    <Pokemon />
+    <AppRoutes />
   )
 }

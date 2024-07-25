@@ -10,7 +10,8 @@ export const fetchPokemon = async (offset) => {
 
         return{
             name: pokemon.name,
-            imageUrl: responseData.sprites.front_default
+            imageUrl: responseData.sprites.front_default,
+            type: responseData.types[0].type.name
         };
     });
 
