@@ -15,25 +15,23 @@ ul li{
     list-style: none;
 }
 
-@layer base {
-	:root{
-		--grass: #7AC74C;
-		--fire: #EE8130;
-		--water: #6390F0;
-		--normal: #A8A77A;
-		--electric: #F7D02C;
-		--ice: #96D9D6;
-		--fighting: #C22E28;
-		--poison: #A33EA1;
-		--ground: #E2BF65;
-		--flying: #A98FF3;
-		--psychic: #F95587;
-		--bug: #A6B91A;
-		--rock: #B6A136;
-		--ghost: #735797;
-		--dragon: #6F35FC;
-		--dark: #705746;
-		--steel: #B7B7CE;
-		--fairy: #D685AD;
-	}
+:root{
+	--bg-grass: #7AC74C;
+	--bg-fire: #EE8130;
+	--bg-water: #6390F0;
+	--bg-normal: #A8A77A;
+	--bg-electric: #F7D02C;
+	--bg-ice: #96D9D6;
+	--bg-fighting: #C22E28;
+	--bg-poison: #A33EA1;
+	--bg-ground: #E2BF65;
+	--bg-flying: #A98FF3;
+	--bg-psychic: #F95587;
+	--bg-bug: #A6B91A;
+	--bg-rock: #B6A136;
+	--bg-ghost: #735797;
+	--bg-dragon: #6F35FC;
+	--bg-dark: #705746;
+	--bg-steel: #B7B7CE;
+	--bg-fairy: #D685AD;
 }
