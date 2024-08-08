@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { fetchPokemon } from "../../api/fetchPokemon";
-import Button from "../Button/button"; "../Theme-Toggler-Button/theme-toggler-button";
+import Button from "../Button/button";
 
 export default function Pokemon() {
 
@@ -16,18 +16,29 @@ export default function Pokemon() {
         pokemons.then((data) => setPokemonData([...pokemonData, ...data]));
     }, [pokemonCount]);
 
-    const typeBackgroundColor = (type) => `var(--bg-${type.toLowerCase()})`
+    // const typeBackgroundColor = (type) => `var(--bg-${type.toLowerCase()})`
+    const typeBackgroundColor = (type) => {
+        const colorVar = `--bg-${type.toLowerCase()}`;
+        const color = getComputedStyle(document.documentElement).getPropertyValue(colorVar);
+        return color
+    };
+
+    const typeLightBackgroundColor = (type) => {
+        const bgColorVar = `--bg-type-${type.toLowerCase()}`;
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue(bgColorVar);
+        return bgColor;
+    };
 
     return(
         <div className="flex flex-col justify-center items-center">
-            <img src="./src/assets/logo-white.png" alt="Logo" className="h-20 m-6"/>
-            <ul className=" rounded-lg text-center flex flex-wrap justify-center w-3/5">
+            <img src="./src/assets/logo-white.png" alt="Logo" className="h-20 m-5"/>
+            <ul className=" rounded-lg text-center flex flex-wrap justify-center w-2/4">
                 {pokemonData.map((pokemon, index) => (
-                    <li key={index} className="cursor-pointer p-6 m-2 rounded-lg" style={{ backgroundColor: typeBackgroundColor(pokemon.type)}}>
+                    <li key={index} className="cursor-pointer p-4 m-2 rounded-lg" style={{ backgroundColor: typeBackgroundColor(pokemon.type)}}>
                         <Link to={`/pokemon/${pokemon.name}`}>
-                            <img style={{ backgroundColor: typeBackgroundColor(pokemon.type)}} src={pokemon.imageUrl} alt={pokemon.name} />
-                            <p style={{ backgroundColor: typeBackgroundColor(pokemon.type)}}>{pokemon.name}</p>
-                            <p style={{ backgroundColor: typeBackgroundColor(pokemon.type)}}>{pokemon.type}</p>
+                            <img src={pokemon.imageUrl} alt={pokemon.name} style={{ backgroundColor: typeLightBackgroundColor(pokemon.type)}} className="rounded-lg"/>
+                            <p className="border-solid rounded-2xl my-4 p-1">{pokemon.name}</p>
+                            <p style={{ backgroundColor: typeLightBackgroundColor(pokemon.type)}} className="rounded-lg p-1">{pokemon.type}</p>
                         </Link>
                     </li>
                 ))}

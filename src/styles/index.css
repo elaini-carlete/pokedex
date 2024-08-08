@@ -7,8 +7,11 @@
     margin: 0;
     box-sizing: border-box;
     border: none;
-    background-color: #675379;
     color: #fff;
+}
+
+body{
+	background-color: #735797;
 }
 
 ul li{
@@ -34,4 +37,23 @@ ul li{
 	--bg-dark: #705746;
 	--bg-steel: #B7B7CE;
 	--bg-fairy: #D685AD;
+
+	--bg-type-grass: #9ED582;
+	--bg-type-fire: #F6A34B;
+	--bg-type-water: #82AEEF;
+	--bg-type-normal: #B6B6A4;
+	--bg-type-electric: #FCE167;
+	--bg-type-ice: #B3E6E3;
+	--bg-type-fighting: #E27771;
+	--bg-type-poison: #C78CC6;
+	--bg-type-ground: #F0D58E;
+	--bg-type-flying: #C1B4F6;
+	--bg-type-psychic: #FC7B9B;
+	--bg-type-bug: #B5C533;
+	--bg-type-rock: #C4B64F;
+	--bg-type-ghost: #967DAF;
+	--bg-type-dragon: #9A70FC;
+	--bg-type-dark: #8D7D74;
+	--bg-type-steel: #CBCBD7;
+	--bg-type-fairy: #E3A8C2;
 }
