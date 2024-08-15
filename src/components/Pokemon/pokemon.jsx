@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { fetchPokemon } from "../../api/fetchPokemon";
 import Button from "../Button/button";
+import Input from "../Input/index.jsx";
+import Type from "../Type/index.jsx";
+import Toggle from "../Toggle/index.jsx";
 
 export default function Pokemon() {
 
@@ -32,6 +35,11 @@ export default function Pokemon() {
     return(
         <div className="flex flex-col justify-center items-center">
             <img src="./src/assets/logo-white.png" alt="Logo" className="h-20 m-5"/>
+            <div className="flex items-center gap-5 mb-4 flex-wrap justify-center w-2/4"> {/* Flex container para Input e Toggle */}
+                <Toggle />
+                <Input />
+                <Type />
+            </div>
             <ul className=" rounded-lg text-center flex flex-wrap justify-center w-2/4">
                 {pokemonData.map((pokemon, index) => (
                     <li key={index} className="cursor-pointer p-4 m-2 rounded-lg" style={{ backgroundColor: typeBackgroundColor(pokemon.type)}}>
